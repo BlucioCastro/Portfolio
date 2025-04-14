@@ -18,6 +18,7 @@
     --color2: #2d2d2d;
     --color3: #ffffff;
     --color4: #e4e2dd;
+    --color5: #454545;
 }
 a {
     text-decoration: none;
@@ -34,6 +35,7 @@ header {
     background-color: var(--color2);
     display: flex;
     flex-direction: column;
+    font-size: 1.25rem;
     gap: 1rem;
     width: 100vw;
     /* position: fixed; */
@@ -50,6 +52,12 @@ header .navbar {
     gap: 0.5rem;
     margin-left: 1rem;
     margin-bottom: 1rem;
+}
+header a:hover{
+    text-decoration: underline;
+}
+h2, h3{
+    font-family: var(--font-title);
 }
 main {
     width: 100%;
@@ -82,7 +90,7 @@ main {
     justify-content: center;
     width: 100%;
 }
-.greetings-container button{
+.btn{
     background-color: var(--color3);
     font-family: var(--font-main);
     color: var(--color2);
@@ -92,7 +100,127 @@ main {
     height: 3rem;
     width: 8rem;
     margin-top: 2rem;
+    transition: transform 0.2s ease-in-out;
+}
+.btn:hover{
+    transform: translateY(-3px);
 }
 .image-project {
+    max-height: 200px;
     width: 100%;
+}
+.about-me{
+    margin: 0 1rem;
+    font-size: 1.25rem;
+    text-align: justify;
+    line-height: 1.6rem;
+}
+.about-me h2{
+    margin: 3rem 0 2rem 0;    
+}
+
+.skills > h3{
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+.skills-container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.skills-container > p{
+    background-color: var(--color5);
+    color: var(--color4);
+    padding: .25rem .5rem;
+    border-radius: .1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.description-section{
+    margin: 3rem 1rem;
+    text-align: justify;
+    font-size: 1.25rem;
+}
+.description-container > h2{
+    margin: 1rem 0;
+}
+.project-1 > h3{
+    margin: 1rem 0;
+}
+.project-1 a:hover{
+    text-decoration: underline;
+}
+.project-1 > p{
+    margin-top: 1rem;
+}
+.project-1 .container-btn{
+    margin-bottom: 3rem;
+}
+.project-2 > h3{
+    margin: 1rem 0;
+}
+.project-2 > p{
+    margin: 1rem 0;
+}
+footer{
+    border-top: 1px solid #e4e2dd;
+    font-family: var(--font-main);
+    padding: 1rem;
+    text-align: center;
+    margin: 0 3rem;
+    white-space: nowrap;
+}
+footer a{
+    text-decoration: underline;
+}
+@media screen and (min-width: 768px) {
+    header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    header > p{
+        margin: 0 1rem;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    header .navbar{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 1.5rem;
+        margin: 1.5rem 2rem;
+        font-size: 1.25rem;
+    }
+    .image-project {
+        max-height: 400px;
+        width: 100%;
+    }
+    .skills > h3{
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    footer{
+        margin-top: 3rem;
+    }
+    footer > p{
+        margin-top: 1rem;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .greetings-section{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100vh;
+    }
+    .greetings-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 5rem;
+    }
+    .greetings-container h1{
+        font-size: 6rem;
+    }
 }
