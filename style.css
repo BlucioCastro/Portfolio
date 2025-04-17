@@ -30,6 +30,8 @@ html {
     color: var(--color4);
     font-family: var(--font-main);
     font-size: 1rem;
+    scroll-behavior: smooth;
+
 }
 header {
     background-color: var(--color2);
@@ -53,10 +55,11 @@ header .navbar {
     margin-left: 1rem;
     margin-bottom: 1rem;
 }
-header a:hover{
+header a:hover {
     text-decoration: underline;
 }
-h2, h3{
+h2,
+h3 {
     font-family: var(--font-title);
 }
 main {
@@ -65,11 +68,16 @@ main {
 .greetings-container {
     margin: 1rem 0 1rem 1rem;
 }
-.greetings-container h1{
+.image-project-greet{
+    max-height: 600px;
+    width: 100%;
+    object-fit: cover;
+}
+.greetings-container h1 {
     font-family: var(--font-title);
     font-size: 3rem;
 }
-.greetings-container p{
+.greetings-container p {
     font-size: 1.25rem;
     text-align: justify;
     margin-top: 2rem;
@@ -85,12 +93,15 @@ main {
     height: 2px;
     background-color: var(--color4);
 }
-.container-btn{
+.container-btn {
     display: flex;
     justify-content: center;
     width: 100%;
 }
-.btn{
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color3);
     font-family: var(--font-main);
     color: var(--color2);
@@ -102,7 +113,7 @@ main {
     margin-top: 2rem;
     transition: transform 0.2s ease-in-out;
 }
-.btn:hover{
+.btn:hover {
     transform: translateY(-3px);
     cursor: pointer;
 }
@@ -110,60 +121,135 @@ main {
     max-height: 200px;
     width: 100%;
 }
-.about-me{
+.about-me {
     margin: 0 1rem;
     font-size: 1.25rem;
     text-align: justify;
     line-height: 1.6rem;
 }
-.about-me h2{
-    margin: 3rem 0 2rem 0;    
+.about-me h2 {
+    margin: 3rem 0 2rem 0;
+}
+.skills{
+    margin: 2rem 1rem;
 }
 
-.skills > h3{
+.skills > h3 {
     margin-top: 2.5rem;
     margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
-.skills-container{
+.skills-container {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
-.skills-container > p{
+.skills-container > p {
     background-color: var(--color5);
     color: var(--color4);
-    padding: .25rem .5rem;
-    border-radius: .1rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.1rem;
     font-size: 1rem;
     font-weight: 600;
 }
-.description-section{
+.description-section {
     margin: 3rem 1rem;
     text-align: justify;
     font-size: 1.25rem;
 }
-.description-container > h2{
+.header-projects h2 {
     margin: 1rem 0;
 }
-.project-1 > h3{
-    margin: 1rem 0;
+.title-style{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.project-1 a:hover{
-    text-decoration: underline;
+.space-element{
+    background-color: var(--color4);
+    border-radius: 1rem;
+    height: 5px;
+    width: 2rem;
+    margin-bottom: 2rem;
 }
-.project-1 > p{
+.header-projects{
+    margin: 1rem 0 3rem 0;
+}
+.project-1 > h3 {
+    margin: 2rem 0 1rem 0;
+}
+.project-1 a{
+    width: 9rem;
+}
+.project-1 > p {
     margin-top: 1rem;
 }
-.project-1 .container-btn{
-    margin-bottom: 3rem;
+.project-1 .container-btn {
+    margin-bottom: 5rem;
 }
-.project-2 > h3{
+.project-2 > h3 {
     margin: 1rem 0;
 }
-.project-2 > p{
+.project-2 > p {
     margin: 1rem 0;
 }
-footer{
+.contact{
+    margin: 1rem 1rem;
+    text-align: justify;
+    font-size: 1.25rem;
+}
+.contact h2{
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.links-contacts{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.logo{
+    width: 3rem;
+    height: 3rem;
+}
+
+.form-style{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem 1em;
+    
+}
+.form-style input{
+    background-color: var(--color1);
+    border: none;
+    border-bottom: 1px solid var(--color4);
+    padding: .5rem;
+    color: var(--color3);
+    font-family: var(--font-title);
+}
+::placeholder{
+    color: var(--color4);
+    font-family: var(--font-main);
+}
+.textarea{ 
+    height: 6rem;
+    background-color: var(--color1);
+    border: 1px solid var(--color4);
+    padding: .5rem;
+    color: var(--color3);
+    font-family: var(--font-title);
+}
+.form-style .container-btn{
+    display: flex;
+    align-items: flex-start;
+    margin: 0rem 0 3rem 0;
+}
+footer {
     border-top: 1px solid #e4e2dd;
     font-family: var(--font-main);
     padding: 1rem;
@@ -171,22 +257,23 @@ footer{
     margin: 0 3rem;
     white-space: nowrap;
 }
-footer a{
+footer a {
     text-decoration: underline;
 }
+
 @media screen and (min-width: 768px) {
-    header{
+    header {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
-    header > p{
+    header > p {
         margin: 0 1rem;
         padding: 1rem;
         font-size: 1rem;
     }
-    header .navbar{
+    header .navbar {
         display: flex;
         align-items: center;
         flex-direction: row;
@@ -196,38 +283,401 @@ footer a{
     }
     .image-project {
         max-height: 400px;
-        width: 100%;
+        width: 100%;   
+        object-fit: cover;
     }
-    .skills > h3{
+
+    .about-me .container-btn{
+        display: flex;
+        justify-content: center;
+    }
+    .skills > h3 {
         margin-top: 3rem;
         margin-bottom: 1.5rem;
     }
-    footer{
+    footer {
         margin-top: 3rem;
     }
-    footer > p{
+    footer > p {
         margin-top: 1rem;
     }
 }
+form input, textarea{
+    font-size: 1rem;
+    font-family: var(--font-main);
+}
 @media screen and (min-width: 1440px) {
-    body{
+    body {
         overflow-x: hidden;
+        height: 100%;
     }
-    header .navbar{
+    header {
+        position: fixed;
+        top: 0;
+        height: 4rem;
+        width: 100%;
+        z-index: 999;
+    }
+    header .navbar {
         margin: 0 5rem;
     }
-    .greetings-section{
+    .greetings-section {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        width: 100vw;
         height: 100vh;
     }
-    .greetings-container{
+    .greetings-container h1{
+        font-size: 15rem;
+    }
+    .greetings-container p {
+        margin-right: 3rem;
+        margin-bottom: 2rem;
+    }
+    .img-container {
+        grid-column: 1;
+        margin-right: 7rem;
+        height: 100vh;
+        /* width: 100%; */
+        display: flex;
+    }
+    .image-project-greet{
+        min-height: 100vh;
+        object-fit: cover;
+    }
+    
+    .greetings-container {
+        grid-column: 2;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin: 0;
+    }
+    .greetings-container h1 {
+        font-size: 6rem;
+    }
+    .greetings-container .container-btn{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .about-me {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100vh;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        scroll-snap-type: y mandatory;
+    }
+    .container-about .container-btn{
+        margin-top: 1rem;
+    }
+    .vertical {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        grid-column: 1;
+        gap: 9rem;
+        writing-mode: sideways-lr;
+        margin: 0;
+        font-size: 12rem;
+        line-height: 9rem;
+        text-align: center;
+        scroll-snap-align: start;
+        padding-bottom: 4rem;
+    }
+    .container-about {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3rem 0;
+        margin-right: 3rem;
+    }
+    .skills{
+        margin-left: 3rem;
+        margin-top: 5rem;
+    }
+    .skills h3{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+   }
+    .description-section {
+        padding-top: 4rem;
+    }
+    .header-projects{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+    .header-projects h2{
+        font-size: 4rem;
+    }
+    .header-projects p{
+        font-size: 1.4rem;
+        margin-bottom: 3rem;
+    }
+    .description-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem 6rem;
+        align-items: center;
+    }
+    
+    .img-project-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;  
+    }
+    .image-project {
+        max-height: 344px;
+        max-width: 600px;
+        object-fit: cover;
+        border-radius: .25rem;
+        margin-left: 10rem;
+        margin-right: 0;
+    }
+    .project-1{
+        margin-right: 3rem;
+    }
+    .project-1 .container-btn{
+        display: flex;
+        justify-content: start;
+    }
+    .contact{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 3rem;
+    }
+    .logo{
+        height: 3rem;
+        width: 3rem;
+    }
+    .title-style{
+        grid-column: span 2;
+        grid-row: 1;
+        margin-bottom: 0rem;
+    }
+    .title-style h2{
+        font-size: 4rem;
+    }
+    .contacts-container{
+        grid-column: 1;
+        grid-row: 2;
+        margin-left: 15rem;
+        margin-right: 5rem;
+        display: flex;
+        align-items: center;
+    }
+    .links-contacts{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 3rem;
+        grid-column: 1;
+        grid-row: 3;
+        margin-left: 10rem;
+    }
+    .form-style{
+        grid-column: 2;
+        grid-row: span 2;
         margin-left: 5rem;
+        margin-right: 15rem;
+        font-size: 1.25rem;
+    }
+    .form-style input{
+        font-size: 1.25rem;
+    }
+    .textarea{
+        font-size: 1.25rem;
+        height: 10rem;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    body {
+        overflow-x: hidden;
+    }
+    header {
+        position: fixed;
+        top: 0;
+        height: 4rem;
+        width: 100%;
+        z-index: 999;
+    }
+    header .navbar {
+        margin: 0 5rem;
+    }
+    .greetings-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
     .greetings-container h1{
+        font-size: 15rem;
+    }
+    .greetings-container p {
+        margin-right: 4rem;
+        margin-bottom: 2rem;
+    }
+    .img-container {
+        grid-column: 1;
+        margin-right: 7rem;
+        height: 100vh;
+        /* width: 100%; */
+        display: flex;
+    }
+    .image-project-greet{
+        min-height: 100vh;
+        object-fit: cover;
+    }
+    
+    .greetings-container {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+    .greetings-container h1 {
         font-size: 6rem;
+    }
+    .greetings-container .container-btn{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .about-me {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100vh;
+        padding-top: 2rem;
+        scroll-snap-type: y mandatory;
+    }
+    .container-about .container-btn{
+        margin-top: 2rem;
+    }
+    .vertical {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 1;
+        gap: 9rem;
+        writing-mode: sideways-lr;
+        font-size: 15rem;
+        line-height: 11.5rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        text-align: center;
+        scroll-snap-align: start;
+    }
+    .container-about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 3rem;
+    }
+    .skills{
+        margin-left: 2rem;
+        margin-bottom: 4rem;
+    }
+    .description-section {
+        padding-top: 3rem;
+    }
+    .header-projects{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-projects h2{
+        font-size: 4rem;
+    }
+    .header-projects p{
+        margin-bottom: 5rem;
+    }
+    .description-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+    }
+    .project-1 p{
+        margin-right: 3rem;
+    }
+    .project-2 p{
+        margin-right: 3rem;
+    }
+    .img-project-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;
+        
+    }
+    .image-project {
+        max-height: 344px;
+        max-width: 600px;
+        object-fit: cover;
+        border-radius: .25rem;
+        margin-left: 10rem;
+        margin-right: 0;
+    }
+    .project-1{
+        margin-right: 3rem;
+    }
+    .project-1 .container-btn{
+        display: flex;
+        justify-content: start;
+    }
+    .contact{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .logo{
+        height: 3rem;
+        width: 3rem;
+    }
+    .title-style{
+        grid-column: span 2;
+        grid-row: 1;
+    }
+    .title-style h2{
+        font-size: 4rem;
+    }
+    .contacts-container{
+        grid-column: 1;
+        grid-row: 2;
+        margin-left: 15rem;
+        margin-right: 5rem;
+        display: flex;
+        align-items: center;
+    }
+    .links-contacts{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 3rem;
+        grid-column: 1;
+        grid-row: 3;
+        margin-left: 10rem;
+    }
+    .form-style{
+        grid-column: 2;
+        grid-row: span 2;
+        /* margin-left: 5rem;
+        margin-right: 15rem; */
+        margin: 3rem 15rem 5rem 0;
+        font-size: 1.25rem;
+        
+    }
+    .form-style input{
+        font-size: 1.25rem;
+    }
+    .textarea{
+        font-size: 1.25rem;
+        height: 10rem;
+    }
+    footer p{
+        margin: 1rem 0;
     }
 }

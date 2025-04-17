@@ -12,16 +12,17 @@
     <header>
         <p>Blucio Castro</p>
         <div class="navbar">
-            <a href="##">Inicio</a>
-            <a href="#">Sobre</a>
-            <a href="#">Projetos</a>
-            <a href="#">Contato</a>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
         </div>
     </header>
     <main>
-        <section class="greetings-section">
+        <section id="inicio" class="greetings-section">
             <div class="img-container">
-                <img src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg" alt="Blucio-img" class="image-project">
+                <img src="image/WhatsApp Image 2025-01-05 at 13.30.53 (3).jpeg" alt="Blucio-img" class="image-project-greet">
+                <!-- https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg -->
             </div>
             <div class="greetings-container">
                 <div class="style-line">
@@ -31,58 +32,106 @@
                 <h1>Sou o Blucio</h1>
                 <p>Um desenvolvedor Web em início de carreira, focado em resultados e no sucesso de cada projeto que desenvolve.</p>
                 <div class="container-btn">
-                    <button class="btn">Projetos</button>
+                    <a href="#projetos" class="btn" target="_self">Projetos</a>
                 </div>
             </div>
 
         </section>
-        <section class="about-me">
-            <h2>SOBRE MIM</h2>
-            <p>Sou Desenvolvedor Web com foco em Frontend, responsável por criar e gerenciar interfaces que impulsionam o sucesso de produtos digitais. Convido você a conferir alguns dos meus trabalhos na seção Projetos.
-            <br>
-            <br>
-            A curiosidade e o desejo constante de aprender são o que me movem. Gosto de explorar o desconhecido e não tenho receio de encarar desafios, mesmo quando envolvem algo que ainda não domino. Acredito que é justamente nesse processo de tentativa, erro e evolução que me aproximo da pessoa e do profissional que quero me tornar.
-            <br>
-            <br>
-            Proatividade, determinação e vontade de evoluir fazem parte da minha essência. Estou sempre buscando formas de crescer, seja adquirindo novos conhecimentos ou enfrentando situações que me tiram da zona de conforto. Para mim, aprender é uma jornada contínua — e é exatamente isso que torna a tecnologia tão fascinante.
-            <br>
-            <br>
-            Estou aberto a oportunidades em que eu possa contribuir, crescer e seguir aprendendo. Se você tiver uma oportunidade que se alinhe com minhas habilidades e objetivos, ficarei feliz em conversar.
-            </p>
-            <div class="container-btn">
-                <button class="btn">Contato</button>
-            </div>
-            <div class="skills">
-                <h3>Minhas Habilidades</h3>
-                <div class="skills-container">
-                    <p>HTML</p>
-                    <p>CSS</p>
-                    <p>JavaScript</p>
-                    <p>Python</p>
-                    <p>GIT</p>
-                    <p>Github</p>
-                    <p>Design Responsivo</p>
+        <section id="sobre" class="about-me">
+            <h2 class="vertical">SOBRE MIM</h2>
+            <div class="container-about">
+                <p>Sou Desenvolvedor Web com foco em Frontend, responsável por criar e gerenciar interfaces que impulsionam o sucesso de produtos digitais. Convido você a conferir alguns dos meus trabalhos na seção Projetos.
+                    <br>
+                    <br>
+                    A curiosidade e o desejo constante de aprender são o que me movem. Gosto de explorar o desconhecido e não tenho receio de encarar desafios, mesmo quando envolvem algo que ainda não domino. Acredito que é justamente nesse processo de tentativa, erro e evolução que me aproximo da pessoa e do profissional que quero me tornar.
+                    <br>
+                    <br>
+                    Proatividade, determinação e vontade de evoluir fazem parte da minha essência. Estou sempre buscando formas de crescer, seja adquirindo novos conhecimentos ou enfrentando situações que me tiram da zona de conforto. Para mim, aprender é uma jornada contínua — e é exatamente isso que torna a tecnologia tão fascinante.
+                    <br>
+                    <br>
+                    Estou aberto a oportunidades em que eu possa contribuir, crescer e seguir aprendendo. Se você tiver uma oportunidade que se alinhe com minhas habilidades e objetivos, ficarei feliz em conversar.
+                </p>
+                <div class="container-btn">
+                    <a href="#contato" class="btn" target="_self">Contato</a>
                 </div>
             </div>
-            
         </section>
-        <section class="description-section">
-            <div class="description-container">
-                <h2>PROJETOS</h2>
+        <div class="skills">
+            <h3>Minhas Habilidades</h3>
+            <div class="skills-container">
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+                <p>Python</p>
+                <p>GIT</p>
+                <p>Github</p>
+                <p>Design Responsivo</p>
+            </div>
+        </div>
+        <section id="projetos" class="description-section">
+            <div class="header-projects">
+                <div class="title-style">
+                    <h2>PROJETOS</h2>
+                    <div class="space-element"></div>
+                </div>
                 <p>Aqui você encontrará alguns dos projetos pessoais que criei, cada projeto contendo seu próprio estudo de caso.</p>
+            </div>
+            <div class="description-container">
+                <div class="img-project-container">
+                    <img src="image/Captura de tela 2025-04-12 112724.png" alt="project-1" class="image-project">
+                </div>
                 <div class="project-1">
                     <h3>Product List With Cart</h3>
-                    <img src="image/Captura de tela 2025-04-12 112724.png" alt="project-1" class="image-project">                 
                     <p>Um projeto criado a partir de um desafio do <a href="https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d" target="_blank"><strong>Frontend Mentor</strong></a> para desenvolver e consolidar meus conhecimentos adquiridos.</p>
                     <div class="container-btn">
-                        <button class="btn">Estudo de Caso</button>
+                        <a href="productListWithCart.html" class="btn">Estudo de Caso</a>
                     </div>
+                </div>
+                <div class="img-project-container">
+                    <img src="image/future-project600-344.jpg" alt="project-2" class="image-project">
                 </div>
                 <div class="project-2">
                     <h3>Advice Generator App</h3>
-                    <img src="image/future-project.png" alt="project-2" class="image-project">                  
                     <p>Em desenvolvimento, aguarde.</p>
                 </div>
+            </div>
+            </div>
+        </section>
+        <section id="contato" class="contact">
+            <div class="title-style">
+                <h2>CONTATO</h2>
+                <div class="space-element"></div>
+            </div>
+            <div class="contacts-container">
+                <p>Fique à vontade para entrar em contato comigo preenchendo o formulário ou pelas redes sociais abaixo. Responderei o mais breve possível!</p>
+            </div>
+            <form action="https://formsubmit.co/bluciowsc@gmail.com" method="POST" class="form-style">
+                <input type="text" name="name" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Mensagem" class="textarea" required></textarea>
+                <div class="container-btn">
+                    <button type="submit" class="btn" target="_blank">Enviar</button>
+                </div>
+            </form>
+            <div class="links-contacts">
+                <a href="https://www.linkedin.com/in/blucio-castro-0b7a91198/" target="_blank">
+                    <picture>
+                        <source media="(min-width: 1440px)" srcset="image/logotipo-do-linkedin124.png">
+                        <img src="image/logotipo-do-linkedin.png" alt="linkedin logo" class="logo">
+                    </picture>
+                </a>
+                <a href="https://github.com/BlucioCastro" target="_blank">
+                    <picture>
+                        <source media="(min-width: 1440px)" srcset="image\github128.png">
+                        <img src="image/github-branco.png" alt="github logo" class="logo">
+                    </picture>
+                </a>
+                <a href="#" download="#">
+                    <picture>
+                        <source media="(min-width: 1440px)" srcset="image\resume-and-cv128.png">
+                        <img src="image/curriculo-e-cv-branco.png" alt="curriculum" class="logo">
+                    </picture>
+                </a>
             </div>
         </section>
     </main>
