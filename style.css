@@ -494,6 +494,9 @@ form input, textarea{
         font-size: 1.25rem;
         height: 10rem;
     }
+    footer p{
+        margin: 1rem;
+    }
 }
 
 @media screen and (min-width: 1600px) {
