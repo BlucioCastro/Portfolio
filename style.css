@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 @font-face {
     font-family: "TT Interphases", sans-serif;
     src: url("font/TT\ Interphases\ Pro\ Trial\ Light.ttf");
@@ -14,6 +15,7 @@
     --font-title: "Roboto Condensed", sans-serif;
     --font-main: "TT Interphases", sans-serif;
     --font-about-me: "Special Gothic Expanded One", sans-serif;
+    --font-crimson: "Crimson Text", serif;
     --color1: #1f2121;
     --color2: #2d2d2d;
     --color3: #ffffff;
@@ -27,11 +29,10 @@ a {
 body,
 html {
     background-color: var(--color1);
-    color: var(--color4);
+    color: var(--color3);
     font-family: var(--font-main);
     font-size: 1rem;
     scroll-behavior: smooth;
-
 }
 header {
     background-color: var(--color2);
@@ -39,8 +40,8 @@ header {
     flex-direction: column;
     font-size: 1.25rem;
     gap: 1rem;
-    width: 100vw;
-    /* position: fixed; */
+    width: 100%;
+    position: fixed;
 }
 header > p {
     font-family: var(--font-main);
@@ -65,10 +66,16 @@ h3 {
 main {
     width: 100%;
 }
+.greetings-section{
+    padding-top: 4rem;
+}
 .greetings-container {
     margin: 1rem 0 1rem 1rem;
 }
-.image-project-greet{
+.img-container {
+    width: 100%;
+}
+.image-project-greet {
     max-height: 600px;
     width: 100%;
     object-fit: cover;
@@ -130,7 +137,7 @@ main {
 .about-me h2 {
     margin: 3rem 0 2rem 0;
 }
-.skills{
+.skills {
     margin: 2rem 1rem;
 }
 
@@ -144,7 +151,7 @@ main {
     gap: 1rem;
     flex-wrap: wrap;
 }
-.skills-container > p {
+.skills-container > div {
     background-color: var(--color5);
     color: var(--color4);
     padding: 0.25rem 0.5rem;
@@ -152,6 +159,7 @@ main {
     font-size: 1rem;
     font-weight: 600;
 }
+
 .description-section {
     margin: 3rem 1rem;
     text-align: justify;
@@ -160,25 +168,25 @@ main {
 .header-projects h2 {
     margin: 1rem 0;
 }
-.title-style{
+.title-style {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.space-element{
+.space-element {
     background-color: var(--color4);
     border-radius: 1rem;
     height: 5px;
     width: 2rem;
     margin-bottom: 2rem;
 }
-.header-projects{
+.header-projects {
     margin: 1rem 0 3rem 0;
 }
 .project-1 > h3 {
     margin: 2rem 0 1rem 0;
 }
-.project-1 a{
+.project-1 a {
     width: 9rem;
 }
 .project-1 > p {
@@ -193,17 +201,17 @@ main {
 .project-2 > p {
     margin: 1rem 0;
 }
-.contact{
+.contact {
     margin: 1rem 1rem;
     text-align: justify;
     font-size: 1.25rem;
 }
-.contact h2{
+.contact h2 {
     margin-top: 3rem;
     margin-bottom: 1rem;
     text-align: center;
 }
-.links-contacts{
+.links-contacts {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -211,40 +219,39 @@ main {
     justify-content: center;
     margin: 2rem 0;
 }
-.logo{
+.logo {
     width: 3rem;
     height: 3rem;
 }
 
-.form-style{
+.form-style {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
     margin: 3rem 1em;
-    
 }
-.form-style input{
+.form-style input {
     background-color: var(--color1);
     border: none;
     border-bottom: 1px solid var(--color4);
-    padding: .5rem;
+    padding: 0.5rem;
     color: var(--color3);
     font-family: var(--font-title);
 }
-::placeholder{
+::placeholder {
     color: var(--color4);
     font-family: var(--font-main);
 }
-.textarea{ 
+.textarea {
     height: 6rem;
     background-color: var(--color1);
     border: 1px solid var(--color4);
-    padding: .5rem;
+    padding: 0.5rem;
     color: var(--color3);
     font-family: var(--font-title);
 }
-.form-style .container-btn{
+.form-style .container-btn {
     display: flex;
     align-items: flex-start;
     margin: 0rem 0 3rem 0;
@@ -267,6 +274,7 @@ footer a {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        width: 100%;
     }
     header > p {
         margin: 0 1rem;
@@ -281,19 +289,26 @@ footer a {
         margin: 1.5rem 2rem;
         font-size: 1.25rem;
     }
+
     .image-project {
         max-height: 400px;
-        width: 100%;   
+        width: 100%;
         object-fit: cover;
     }
+    .about-me{
+        padding-top: 3rem;
+    }
 
-    .about-me .container-btn{
+    .about-me .container-btn {
         display: flex;
         justify-content: center;
     }
     .skills > h3 {
         margin-top: 3rem;
         margin-bottom: 1.5rem;
+    }
+    .description-section{
+        padding-top: 3rem;
     }
     footer {
         margin-top: 3rem;
@@ -302,7 +317,8 @@ footer a {
         margin-top: 1rem;
     }
 }
-form input, textarea{
+form input,
+textarea {
     font-size: 1rem;
     font-family: var(--font-main);
 }
@@ -327,7 +343,7 @@ form input, textarea{
         width: 100vw;
         height: 100vh;
     }
-    .greetings-container h1{
+    .greetings-container h1 {
         font-size: 15rem;
     }
     .greetings-container p {
@@ -336,16 +352,18 @@ form input, textarea{
     }
     .img-container {
         grid-column: 1;
-        margin-right: 7rem;
+
         height: 100vh;
-        /* width: 100%; */
+        width: 100%;
         display: flex;
     }
-    .image-project-greet{
+    .image-project-greet {
+        margin-right: 7rem;
         min-height: 100vh;
         object-fit: cover;
+        padding: 0;
     }
-    
+
     .greetings-container {
         grid-column: 2;
         display: flex;
@@ -356,7 +374,7 @@ form input, textarea{
     .greetings-container h1 {
         font-size: 6rem;
     }
-    .greetings-container .container-btn{
+    .greetings-container .container-btn {
         display: flex;
         justify-content: flex-start;
     }
@@ -368,7 +386,7 @@ form input, textarea{
         padding-top: 2rem;
         scroll-snap-type: y mandatory;
     }
-    .container-about .container-btn{
+    .container-about .container-btn {
         margin-top: 1rem;
     }
     .vertical {
@@ -380,6 +398,7 @@ form input, textarea{
         writing-mode: sideways-lr;
         margin: 0;
         font-size: 12rem;
+        /* letter-spacing: -1rem; */
         line-height: 9rem;
         text-align: center;
         scroll-snap-align: start;
@@ -393,77 +412,138 @@ form input, textarea{
         padding: 3rem 0;
         margin-right: 3rem;
     }
-    .skills{
-        margin-left: 3rem;
-        margin-top: 5rem;
+    .skills {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+        width: 100%;
     }
-    .skills h3{
-        font-size: 2rem;
-        margin-bottom: 2rem;
-   }
+    .skills h3 {
+        font-family: var(--font-about-me);
+        color: var(--color4);
+        font-size: 4rem;
+        text-transform: uppercase;
+        margin-bottom: 0rem;
+    }
+    .skills-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        line-height: 2.5rem;
+    }
+    .skills-container > div{
+        font-size: 4rem;
+        background-color: transparent;
+        font-family: var(--font-about-me);
+        text-transform: uppercase;
+    }
+    .item0{
+        margin-left: 10rem;
+    }
+    .item1{
+        margin-right: 7rem;
+    }
+    .item2{
+        margin-left: 1rem;
+    }
+    .item3{
+        margin-left: 8rem;
+    }
+    .item4{
+        margin-left: 6rem;
+    }
+    .item5{
+        margin-right: 4rem;
+    }
+    .item6{
+        margin-left: 1rem;
+    }
+    .item7{
+        margin-right: 17rem;
+    }
+
     .description-section {
         padding-top: 4rem;
     }
-    .header-projects{
+    .header-projects {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 3rem;
         margin-bottom: 1rem;
     }
-    .header-projects h2{
+    .header-projects h2 {
         font-size: 4rem;
     }
-    .header-projects p{
+    .header-projects p {
         font-size: 1.4rem;
         margin-bottom: 3rem;
     }
-    .description-container{
+    .autoShow {
+        animation: autoshowAnimation both;
+        animation-timeline: view(70% 1%);
+    }
+    @keyframes autoshowAnimation {
+        from {
+            opacity: 0;
+            transform: translateY(100px) scale(0.4);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    .description-section{
+        padding-top: 2rem;
+    }
+    .description-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem 6rem;
         align-items: center;
     }
-    
-    .img-project-container{
+
+    .img-project-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 2rem 0;  
+        margin: 2rem 0;
     }
     .image-project {
         max-height: 344px;
         max-width: 600px;
         object-fit: cover;
-        border-radius: .25rem;
+        border-radius: 0.25rem;
         margin-left: 10rem;
         margin-right: 0;
     }
-    .project-1{
+    .project-1 {
         margin-right: 3rem;
     }
-    .project-1 .container-btn{
+    .project-1 .container-btn {
         display: flex;
         justify-content: start;
     }
-    .contact{
+    .contact {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         padding-top: 3rem;
     }
-    .logo{
+    .logo {
         height: 3rem;
         width: 3rem;
     }
-    .title-style{
+    .title-style {
         grid-column: span 2;
         grid-row: 1;
         margin-bottom: 0rem;
     }
-    .title-style h2{
+    .title-style h2 {
         font-size: 4rem;
     }
-    .contacts-container{
+    .contacts-container {
         grid-column: 1;
         grid-row: 2;
         margin-left: 15rem;
@@ -471,7 +551,7 @@ form input, textarea{
         display: flex;
         align-items: center;
     }
-    .links-contacts{
+    .links-contacts {
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -480,21 +560,21 @@ form input, textarea{
         grid-row: 3;
         margin-left: 10rem;
     }
-    .form-style{
+    .form-style {
         grid-column: 2;
         grid-row: span 2;
-        margin-left: 5rem;
+        margin-left: 4rem;
         margin-right: 15rem;
         font-size: 1.25rem;
     }
-    .form-style input{
+    .form-style input {
         font-size: 1.25rem;
     }
-    .textarea{
+    .textarea {
         font-size: 1.25rem;
         height: 10rem;
     }
-    footer p{
+    footer p {
         margin: 1rem;
     }
 }
@@ -517,7 +597,7 @@ form input, textarea{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    .greetings-container h1{
+    .greetings-container h1 {
         font-size: 15rem;
     }
     .greetings-container p {
@@ -531,11 +611,11 @@ form input, textarea{
         /* width: 100%; */
         display: flex;
     }
-    .image-project-greet{
+    .image-project-greet {
         min-height: 100vh;
         object-fit: cover;
     }
-    
+
     .greetings-container {
         grid-column: 2;
         display: flex;
@@ -546,7 +626,7 @@ form input, textarea{
     .greetings-container h1 {
         font-size: 6rem;
     }
-    .greetings-container .container-btn{
+    .greetings-container .container-btn {
         display: flex;
         justify-content: flex-start;
     }
@@ -557,7 +637,7 @@ form input, textarea{
         padding-top: 2rem;
         scroll-snap-type: y mandatory;
     }
-    .container-about .container-btn{
+    .container-about .container-btn {
         margin-top: 2rem;
     }
     .vertical {
@@ -580,74 +660,73 @@ form input, textarea{
         justify-content: center;
         margin-right: 3rem;
     }
-    .skills{
+    .skills {
         margin-left: 2rem;
         margin-bottom: 4rem;
     }
     .description-section {
         padding-top: 3rem;
     }
-    .header-projects{
+    .header-projects {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .header-projects h2{
+    .header-projects h2 {
         font-size: 4rem;
     }
-    .header-projects p{
+    .header-projects p {
         margin-bottom: 5rem;
     }
-    .description-container{
+    .description-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         align-items: center;
     }
-    .project-1 p{
+    .project-1 p {
         margin-right: 3rem;
     }
-    .project-2 p{
+    .project-2 p {
         margin-right: 3rem;
     }
-    .img-project-container{
+    .img-project-container {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 2rem 0;
-        
     }
     .image-project {
         max-height: 344px;
         max-width: 600px;
         object-fit: cover;
-        border-radius: .25rem;
+        border-radius: 0.25rem;
         margin-left: 10rem;
         margin-right: 0;
     }
-    .project-1{
+    .project-1 {
         margin-right: 3rem;
     }
-    .project-1 .container-btn{
+    .project-1 .container-btn {
         display: flex;
         justify-content: start;
     }
-    .contact{
+    .contact {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    .logo{
+    .logo {
         height: 3rem;
         width: 3rem;
     }
-    .title-style{
+    .title-style {
         grid-column: span 2;
         grid-row: 1;
     }
-    .title-style h2{
+    .title-style h2 {
         font-size: 4rem;
     }
-    .contacts-container{
+    .contacts-container {
         grid-column: 1;
         grid-row: 2;
         margin-left: 15rem;
@@ -655,7 +734,7 @@ form input, textarea{
         display: flex;
         align-items: center;
     }
-    .links-contacts{
+    .links-contacts {
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -664,23 +743,22 @@ form input, textarea{
         grid-row: 3;
         margin-left: 10rem;
     }
-    .form-style{
+    .form-style {
         grid-column: 2;
         grid-row: span 2;
         /* margin-left: 5rem;
         margin-right: 15rem; */
         margin: 3rem 15rem 5rem 0;
         font-size: 1.25rem;
-        
     }
-    .form-style input{
+    .form-style input {
         font-size: 1.25rem;
     }
-    .textarea{
+    .textarea {
         font-size: 1.25rem;
         height: 10rem;
     }
-    footer p{
+    footer p {
         margin: 1rem 0;
     }
 }
