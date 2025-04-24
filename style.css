@@ -287,13 +287,46 @@ footer a {
         margin: 1.5rem 2rem;
         font-size: 1.25rem;
     }
+    .greetings-section{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 90vh;
+    }
+    .greetings-container{
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .greetings-container p {
+        margin-right: 2rem;
+    }
+    /* .container-btn > a{
+        margin-top: 5rem;
+        width: 7rem;
+    } */
+    .img-container {
+        height: 100vh;
+        grid-column: 1;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .image-project-greet {
+        min-height: 100vh;
+        object-fit: cover;
+        padding: 0;
+        align-self: flex-end;
+    }
     .image-project {
-        max-height: 400px;
+        max-height: 350px;
         width: 100%;
         object-fit: cover;
     }
     .about-me{
-        padding-top: 3rem;
+        margin-top: 2rem;
+        padding-top: 4rem;
     }
     .about-me .container-btn {
         display: flex;
@@ -359,15 +392,16 @@ textarea {
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        overflow: hidden;
     }
-    .image-project-greet {
-        /* margin-top: 4rem; */
-        margin-right: 7rem;
-        min-height: 91vh;
-        object-fit: cover;
+    .image-project-greet{
+        height: 100vh;
+        object-fit: fill;
         padding: 0;
         align-self: flex-end;
+        min-width: 45vw; 
+        display: block;
     }
     .greetings-container {
         grid-column: 2;
