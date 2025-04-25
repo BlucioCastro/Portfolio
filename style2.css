@@ -68,8 +68,13 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
-    font-size: 1.1rem;
+    margin: 2rem 1rem ;
+    font-size: 1.25rem;
+    text-align: justify;
+}
+.introduction h1{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 .introduction a {
     margin-top: 2rem;
@@ -134,6 +139,7 @@ li {
 }
 .tools h3 {
     font-size: 1.5rem;
+    text-align: center;
 }
 .list-tools ul {
     display: flex;
@@ -171,9 +177,8 @@ footer {
     padding: 1rem;
     text-align: center;
     margin: 0 3rem;
-    white-space: nowrap;
 }
-footer a {
+footer strong{
     text-decoration: underline;
 }
 @media screen and (min-width: 768px) {
