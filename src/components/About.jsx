@@ -3,8 +3,8 @@ import Button from "./Button";
 export default function About() {
 	return (
 		<section className="w-full h-full md:grid md:grid-cols-2">
-			<div className="flex justify-center items-center overflow-hidden">
-				<p className="writing-vertical-rl rotate-270 tracking-tighter text-[6rem] md:text-[12rem] inline-block leading-[4.5rem] md:leading-[9rem] text-center py-[5rem] md:py-38 font-medium">
+			<div className="flex justify-center items-center  animate-autoshow">
+				<p className="writing-vertical-rl text-center font-skills font-medium rotate-270 tracking-tighter py-20 text-[4rem]  inline-block leading-12 md:leading-24 md:text-[8rem] md:py-40 lg:text-[9rem] lg:py-48 lg:leading-32 ">
 					ABOUT <br /> ME
 				</p>
 			</div>

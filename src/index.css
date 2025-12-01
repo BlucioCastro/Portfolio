@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap");
 @import "tailwindcss";
 
 @layer base {
@@ -7,6 +8,33 @@
 		box-sizing: border-box;
 	}
 	body {
-    @apply bg-[#1c1716] text-amber-50;
+		@apply bg-[#1c1716] text-amber-50;
 	}
 }
+@theme {
+	--font-skills: "Special Gothic Expanded One", sans-serif;
+}
+@layer components {
+	.skillStyle {
+		/* font-family: var(--font-skills); */
+		@apply font-bold text-3xl  md:text-5xl lg:text-6xl font-skills;
+	}
+}
+ @layer utilities {
+	@keyframes autoshowAnimation {
+		from {
+			opacity: 0;
+			transform: translateY(100px) scale(0.4);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
+	}
+
+	.animate-autoshow {
+		animation: autoshowAnimation 0.7s ease forwards;
+		animation-timeline: view(70% 1%);
+	}
+}
+
