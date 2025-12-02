@@ -1,5 +1,6 @@
 import About from "../components/About";
 import Hero from "../components/Hero";
+import ProjectsCarousel from "../components/ProjectsCarousel";
 import Skills from "../components/Skills";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
 				<div className="bg-[#1F1B1A] rounded-[30px] p-8">
 					<About />
 					<Skills />
+					<ProjectsCarousel />
 				</div>
 			</section>
 		</>
