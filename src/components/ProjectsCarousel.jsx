@@ -42,20 +42,37 @@ export default function ProjectsCarousel() {
 	];
 
 	return (
-		<div className="w-full">
+		<div className="w-full relative">
 			<h1 className="text-xl mb-4">My Projects</h1>
-			<div className="flex items-center gap-2 mb-4">
-				<span className="text-lg font-bold text-gray-500">
-					{projects[current].number}
-				</span>
-				<h2 className="text-xl font-semibold">{projects[current].name}</h2>
+
+			<div className="w-50 overflow-hidden absolute left-70 bottom-83">
+				<div className="w-full flex transition-transform duration-700"
+					style={{transform: `translateX(-${current*100}%)`}}
+				>
+					{projects.map((num) => (
+						<div key={num.id} className="w-full shrink-0 ">
+							<span className="text-9xl font-bold text-[#313237]">{num.number}</span>
+						</div>
+					))}
+				</div>
+			</div>
+			<div className="overflow-hidden absolute md:top-40 md:left-60 md:z-10">
+				<div className="h-30 flex flex-col justify-start  transition-transform  duration-700"
+					style={{transform: `translateY(-${current*100}%)`}}
+				>
+					{projects.map((title) => (
+						<div key={title.id} className="h-30 shrink-0 w-80">
+							<span className="text-4xl font-bold flex-wrap font-skills text-orange-500">{title.name}</span>
+						</div>
+					))}
+				</div>
 			</div>
 
 			<div className="flex flex-col items-center">
-				<div className="w-[50%] overflow-hidden flex justify-center items-center">
+				<div className="w-[50%] overflow-hidden flex justify-start items-center">
 					<div
 						className="flex gap-6 transition-transform duration-700"
-						style={{ transform: `translateX(-${current * 86}%)` }}
+						style={{ transform: `translateX(-${current * 89}%)` }}
 					>
 						{projects.map((slide, index) => {
 							const isActive = index === current;
@@ -63,7 +80,7 @@ export default function ProjectsCarousel() {
 							return (
 								<div
 									key={slide.id}
-									className={`w-[86%] shrink-0 overflow-hidden transition-all duration-700 ${
+									className={`w-[86%] shrink-0 overflow-hidden ml-0 transition-all duration-700 ${
 										isActive ? "opacity-100" : "opacity-40"
 									}`}
 								>
