@@ -1,8 +1,9 @@
 import { useState } from "react";
 import HydraImg from "../assets/HydraLandingPage.jpeg";
 import AdviceGenerator from "../assets/AdviceGenerator.jpeg";
-import ProductLWC from "../assets/ProductListWithCart.jpeg";
+import ProductLWC from "../assets/plwc2.jpeg";
 import tmdbplus from "../assets/tmdbplus1.png";
+import { Link } from "react-router-dom";
 
 export default function ProjectsCarousel() {
 	const [current, setCurrent] = useState(0);
@@ -13,56 +14,78 @@ export default function ProjectsCarousel() {
 			name: "TMDb+",
 			image: tmdbplus,
 			number: "01",
-			description:
-				"Catálogo de filmes e séries desenvolvido em React...",
+			link: "/projects/tmdbplus",
 		},
 		{
 			id: "2",
 			name: "Hydra Landing Page",
 			image: HydraImg,
 			number: "02",
-			description: "Projeto desenvolvido em React com Vite...",
+			link: "/projects/hydralandingpage",
 		},
 		{
 			id: "3",
 			name: "Product List With Cart",
 			image: ProductLWC,
 			number: "03",
-			description:
-				"Um projeto criado a partir de um desafio do Frontend Mentor...",
+			link: "/projects/productlistwithcart",
 		},
 		{
 			id: "4",
 			name: "Advice Generator App",
 			image: AdviceGenerator,
 			number: "04",
-			description:
-				"Projeto desenvolvido para reforçar meu conhecimento...",
+			link: "/projects/advicegeneratorapp",
 		},
 	];
-
+	const invertido = [...projects].reverse();
 	return (
-		<div className="w-full relative">
+		<div className="w-full relative" id="projects">
 			<h1 className="text-xl mb-4">My Projects</h1>
 
 			<div className="w-50 overflow-hidden absolute left-70 bottom-83">
-				<div className="w-full flex transition-transform duration-700"
-					style={{transform: `translateX(-${current*100}%)`}}
+				<div
+					className="w-full flex transition-transform duration-800"
+					style={{ transform: `translateX(-${current * 100}%)` }}
 				>
-					{projects.map((num) => (
-						<div key={num.id} className="w-full shrink-0 ">
-							<span className="text-9xl font-bold text-[#313237]">{num.number}</span>
+					{projects.map((num, index) => {
+						const isActive = num === current;
+						return (
+							<div key={num.id} className="w-full shrink-0 ">
+								<span className={`text-9xl font-bold text-[#313237] ${isActive ? "scale-100" : "scale-70"}`}>
+									{num.number}
+								</span>
+							</div>
+						);
+					})}
+				</div>
+			</div>
+			<div className="overflow-hidden absolute md:top-40 md:left-55 md:z-10">
+				<div
+					className="h-30 flex flex-col justify-start  transition-transform  duration-700"
+					style={{ transform: `translateY(-${current * 100}%)` }}
+				>
+					{projects.map((title) => (
+						<div key={title.id} className="h-30 shrink-0 w-90">
+							<span className="text-5xl font-bold flex-wrap font-sans drop-shadow-xl">
+								{title.name}
+							</span>
 						</div>
 					))}
 				</div>
 			</div>
-			<div className="overflow-hidden absolute md:top-40 md:left-60 md:z-10">
-				<div className="h-30 flex flex-col justify-start  transition-transform  duration-700"
-					style={{transform: `translateY(-${current*100}%)`}}
+			<div className="overflow-hidden absolute top-75 left-55">
+				<div
+					className="h-6 flex flex-col justify-end transition-transform duration-700"
+					style={{
+						transform: `translateY(${current * 100}%)`,
+					}}
 				>
-					{projects.map((title) => (
-						<div key={title.id} className="h-30 shrink-0 w-80">
-							<span className="text-4xl font-bold flex-wrap font-skills text-orange-500">{title.name}</span>
+					{invertido.map((i) => (
+						<div key={i.id} className="h-6 shrink-0">
+							<Link to={i.link} className="font-sans underline ">
+								View Case
+							</Link>
 						</div>
 					))}
 				</div>
@@ -80,8 +103,8 @@ export default function ProjectsCarousel() {
 							return (
 								<div
 									key={slide.id}
-									className={`w-[86%] shrink-0 overflow-hidden ml-0 transition-all duration-700 ${
-										isActive ? "opacity-100" : "opacity-40"
+									className={`w-[86%] shrink-0 overflow-hidden ml-0 transition-all duration-700 ease-in-out ${
+										isActive ? "opacity-100 scale-100" : "opacity-40 scale-85"
 									}`}
 								>
 									<img
