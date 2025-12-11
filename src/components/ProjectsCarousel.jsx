@@ -1,44 +1,12 @@
 import { useState } from "react";
-import HydraImg from "../assets/HydraLandingPage.jpeg";
-import AdviceGenerator from "../assets/AdviceGenerator.jpeg";
-import ProductLWC from "../assets/plwc2.jpeg";
-import tmdbplus from "../assets/tmdbplus1.png";
 import { Link } from "react-router-dom";
+import projects from "../data/projects";
 
 export default function ProjectsCarousel() {
   const [current, setCurrent] = useState(0);
 
-  const projects = [
-    {
-      id: "1",
-      name: "TMDb+",
-      image: tmdbplus,
-      number: "01",
-      link: "/projects/tmdbplus",
-    },
-    {
-      id: "2",
-      name: "Hydra Landing Page",
-      image: HydraImg,
-      number: "02",
-      link: "/projects/hydralandingpage",
-    },
-    {
-      id: "3",
-      name: "Product List With Cart",
-      image: ProductLWC,
-      number: "03",
-      link: "/projects/productlistwithcart",
-    },
-    {
-      id: "4",
-      name: "Advice Generator App",
-      image: AdviceGenerator,
-      number: "04",
-      link: "/projects/advicegeneratorapp",
-    },
-  ];
   const invertido = [...projects].reverse();
+
   return (
     <div className="w-full lg:mt-20" id="projects">
       <div className="w-full pb-8 md:pb-16 lg:pb-40 flex items-center gap-2 ltor">
@@ -67,19 +35,19 @@ export default function ProjectsCarousel() {
         </div>
         <div className="overflow-hidden absolute z-10 top-[15%] md:top-[20%] lg:top-[30%] lg:left-[-1%] lg:z-10 xl:left-[2%]">
           <div
-            className="h-15 md:h-25 md:w-60 lg:h-30 lg:w-100 xl:w-150 xl:h-50 flex flex-col justify-start  transition-transform  duration-700"
+            className="h-15 md:h-25 md:w-60 lg:h-30 lg:w-100 xl:w-150 xl:h-45 flex flex-col justify-start  transition-transform  duration-700"
             style={{ transform: `translateY(-${current * 100}%)` }}
           >
             {projects.map((title, i) => (
-              <div key={title.id} className="h-15 w-30 md:h-25 md:w-60 lg:h-30 xl:h-50 shrink-0 lg:w-110 xl:w-150">
-                <span className={`text-base md:text-3xl md:w-30 lg:text-5xl xl:w-60 xl:h-50 xl:text-7xl xl:[text-shadow:2px_2px_4px_rgba(0,9,9,0.3)] font-bold flex-wrap font-sans drop-shadow-xl ${i === current ? "opacity-100 scale-100" : "opacity-100 scale-50"}`}>
+              <div key={title.id} className="h-15 w-30 md:h-25 md:w-60 lg:h-30 xl:h-45 shrink-0 lg:w-110 xl:w-150">
+                <span className={`text-base md:text-3xl md:w-30 lg:text-5xl xl:w-60 xl:h-50 xl:text-7xl xl:[text-shadow:2px_2px_4px_rgba(0,9,9,0.3)] font-bold flex-wrap font-sans drop-shadow-xl ${i === current ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}>
                   {title.name}
                 </span>
               </div>
             ))}
           </div>
         </div>
-        <div className="overflow-hidden z-10 absolute top-[60%] lg:top-[70%] lg:left-[-1%] xl:top-[60%] xl:left-[2%] ">
+        <div className="overflow-hidden z-10 absolute top-[60%] lg:top-[70%] lg:left-[-1%] xl:top-[65%] xl:left-[2%] ">
           <div
             className="h-7 lg:h-15 flex flex-col justify-end transition-transform duration-700"
             style={{
@@ -88,7 +56,7 @@ export default function ProjectsCarousel() {
           >
             {invertido.map((i) => (
               <div key={i.id} className="h-7 lg:h-15 shrink-0">
-                <Link to={i.link} className={`font-sans lg:text-[1.25rem] ${current ===(projects.length -1 - invertido.indexOf(i))? "opacity-100" : "opacity-0"}`}>
+                <Link to={`/projects/${i.id}`} className={`font-sans lg:text-[1.25rem] ${current ===(projects.length -1 - invertido.indexOf(i))? "opacity-100" : "opacity-0"}`}>
                   View Case
                 </Link>
                 <div className={`bg-amber-50 h-0.5 lg:mt-2 w-full ${current ===(projects.length -1 - invertido.indexOf(i))? "opacity-100" : "opacity-0"}`}></div>
