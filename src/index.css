@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
 @layer base {
@@ -15,16 +16,16 @@
 @theme {
 	--font-skills: "Special Gothic Expanded One", sans-serif;
 	--font-hero: "Anton", sans-serif;
+	--font-barlow: "Barlow Semi Condensed", sans-serif;
 }
 @layer components {
 	.skillStyleTitle {
 		@apply font-bold text-3xl  md:text-5xl lg:text-6xl font-skills;
 	}
 	.skillStyle {
-		/* font-family: var(--font-skills); */
-
 		@apply font-bold text-3xl  md:text-4xl lg:text-5xl font-skills;
 	}
+
 }
 @layer utilities {
 	@keyframes autoshowAnimation {
