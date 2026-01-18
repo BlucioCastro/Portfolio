@@ -1,21 +1,23 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import projects from "../data/projects";
+import { useLanguage } from "../assets/context/LanguageContext";
 
 export default function ProjectsCarousel() {
+  const { t } = useLanguage()
   const [current, setCurrent] = useState(0);
 
   const invertido = [...projects].reverse();
 
   return (
-    <div className="w-full lg:mt-20" id="projects">
+    <div className="w-full lg:mt-20 p-4 scroll-mt-10" id="projects">
       <div className="w-full pb-8 md:pb-16 lg:pb-40 flex items-center gap-2 ltor">
-        <div className="h-0.5 w-4 lg:w-10 bg-amber-50"></div>
-        <h1 className="text-2xl lg:text-4xl font-sans font-bold">My Projects</h1>
+        <div className="h-1 w-6 bg-amber-50 rounded-2xl"></div>
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-sans font-bold">{t.projectTxt.title}</h1>
       </div>
 
       <div className="relative ">
-        <div className="w-10 hidden left-[-10%] bottom-[90%] overflow-hidden absolute md:block md:w-25 md:left-[6%] md:bottom-[94%] lg:w-50 lg:left-[5%] lg:bottom-[93%] xl:bottom-[94%]">
+        <div className="w-10 hidden left-[-10%] bottom-[90%] overflow-hidden absolute md:block md:w-25 md:left-[6%] md:bottom-[94%] lg:w-50 lg:left-[13%] lg:bottom-[93%] xl:bottom-[94%]">
           <div
             className="w-40 lg:w-full flex transition-transform duration-700 "
             style={{ transform: `translateX(-${current * 100}%)` }}
@@ -33,7 +35,7 @@ export default function ProjectsCarousel() {
             ))}
           </div>
         </div>
-        <div className="overflow-hidden absolute z-10 top-[15%] md:top-[20%] lg:top-[30%] lg:left-[-1%] lg:z-10 xl:left-[2%]">
+        <div className="overflow-hidden absolute z-10 top-[15%] md:top-[20%] lg:top-[30%] lg:left-[6%] lg:z-10 xl:left-[4%] xl:top-[20%]">
           <div
             className="h-15 md:h-25 md:w-60 lg:h-30 lg:w-100 xl:w-150 xl:h-45 flex flex-col justify-start  transition-transform  duration-700"
             style={{ transform: `translateY(-${current * 100}%)` }}
@@ -47,7 +49,7 @@ export default function ProjectsCarousel() {
             ))}
           </div>
         </div>
-        <div className="overflow-hidden z-10 absolute top-[60%] lg:top-[70%] lg:left-[-1%] xl:top-[65%] xl:left-[2%] ">
+        <div className="overflow-hidden z-10 absolute top-[60%] lg:top-[70%] lg:left-[6%] xl:top-[65%] xl:left-[7%] ">
           <div
             className="h-7 lg:h-15 flex flex-col justify-end transition-transform duration-700"
             style={{
@@ -56,16 +58,16 @@ export default function ProjectsCarousel() {
           >
             {invertido.map((i) => (
               <div key={i.id} className="h-7 lg:h-15 shrink-0">
-                <Link to={`/projects/${i.id}`} className={`font-sans lg:text-[1.25rem] ${current ===(projects.length -1 - invertido.indexOf(i))? "opacity-100" : "opacity-0"}`}>
-                  View Case
+                <Link to={`/projects/${i.id}`} className={`font-sans text-[.8rem] lg:text-[1.25rem] ${current ===(projects.length -1 - invertido.indexOf(i))? "opacity-100" : "opacity-0"}`}>
+                  {t.projectTxt.case}
                 </Link>
-                <div className={`bg-amber-50 h-0.5 lg:mt-2 w-full ${current ===(projects.length -1 - invertido.indexOf(i))? "opacity-100" : "opacity-0"}`}></div>
+                <div className={`bg-amber-50 h-0.5 lg:mt-2 w-full rounded-2xl ${current ===(projects.length -1 - invertido.indexOf(i))? "opacity-100" : "opacity-0"}`}></div>
               </div>
             ))}
           </div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="w-full md:w-[80%] lg:w-[80%] overflow-hidden flex">
+          <div className="w-full md:w-[80%] lg:w-[65%] overflow-hidden flex">
             <div
               className="flex  transition-transform duration-700"
               style={{ transform: `translateX(-${current * 89}%)` }}
@@ -92,12 +94,12 @@ export default function ProjectsCarousel() {
         </div>
       </div>
 
-      <div className="flex justify-center mt-4 gap-2">
+      <div className="flex justify-center mt-8 gap-2">
         {projects.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-1 w-9 rounded-lg cursor-pointer ${
+            className={`h-[0.3rem] w-9 rounded-lg cursor-pointer ${
               i === current ? "bg-orange-500 scale-110" : "bg-amber-900"
             }`}
           ></button>
@@ -106,3 +108,4 @@ export default function ProjectsCarousel() {
     </div>
   );
 }
+// bg-linear-to-r  from-[#3b3b3bfb] via-[#6e6e6efb] to-[#3b3b3bfb]

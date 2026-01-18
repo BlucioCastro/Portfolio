@@ -1,7 +1,10 @@
+import { useLanguage } from "../assets/context/LanguageContext";
+
 export default function Skills() {
+	const { t } = useLanguage()
 	return (
-		<div className="flex flex-col items-center py-12 md:pt-20 lg:py-18">
-			<p className="skillStyleTitle animate-autoshow pr-3 md:pr-12">MY SKILLS</p>
+		<div className="flex flex-col items-center px-4 py-12 md:pt-20 lg:py-18">
+			<p className="skillStyle animate-autoshow pr-3 md:pr-12 text-center">{t.skills.my}</p>
 			<p className="skillStyle animate-autoshow pl-12 md:pl-10">HTML</p>
 			<p className="skillStyle animate-autoshow pr-10 md:pr-20">CSS</p>
 			<p className="skillStyle animate-autoshow md:pl-10">TAILWINDCSS</p>
